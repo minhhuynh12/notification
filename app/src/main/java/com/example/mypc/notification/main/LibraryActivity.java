@@ -81,12 +81,20 @@ public class LibraryActivity extends AppCompatActivity implements FragmentIntera
         FragmentManager manager = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
 
+        switch (direction){
+            case RIGHT_IN:
+                transaction.setCustomAnimations(R.anim.enter_from_top , R.anim.exit_to_bottom);
+                break;
+        }
+
+
         if (bundle != null && bundle.size() > 0) {
             fragment.setArguments(bundle);
         }
 
 
         String tagName = fragmentType.toString();
+
         transaction.replace(R.id.frameMain , fragment ,tagName);
         transaction.commit();
     }

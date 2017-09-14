@@ -18,7 +18,7 @@ import extras.Enumes;
 
 
 
-public class FragmentDownload extends android.support.v4.app.Fragment {
+public class FragmentDownload extends BaseFragment {
     Button btnDownload;
     FragmentInteraction mInteraction;
     EditText editDownload;
@@ -36,10 +36,11 @@ public class FragmentDownload extends android.support.v4.app.Fragment {
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
                 bundle.putString("Data" , editDownload.getText().toString());
-
+                hideKeyboardIfNeed(getContext());
                 mInteraction.openFragmnet(Enumes.FragmentType.FRAGMENT_TYPE, bundle , Enumes.Direction.RIGHT_IN);
             }
         });
+
         return view;
 
 

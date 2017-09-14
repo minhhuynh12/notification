@@ -17,7 +17,7 @@ import android.widget.TextView;
  * Created by MINH NGUYEN on 6/6/2017.
  */
 
-public class BaseFragment extends android.app.Fragment {
+public class BaseFragment extends Fragment {
     /**
      * call this method if fragment is attached on child activity from base actvity
      *
