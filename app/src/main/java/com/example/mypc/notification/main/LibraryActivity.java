@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ import fragment.BaseFragment;
 import fragment.FragmentDownload;
 import fragment.FragmentHot;
 import fragment.FragmentType;
+import fragment.FragmentTypiCode;
 
 /**
  * Created by MyPC on 11/09/2017.
@@ -27,14 +29,15 @@ import fragment.FragmentType;
 public class LibraryActivity extends AppCompatActivity implements FragmentInteraction {
     Fragment frag;
     android.support.v4.app.FragmentTransaction transaction;
-    TextView tvTaive;
-    TextView tvLishsu;
+    TextView tvTaive, tvLishsu , tvYeuthich;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.library_activity);
         tvTaive = (TextView) findViewById(R.id.tvTaive);
         tvLishsu = (TextView) findViewById(R.id.tvLishsu);
+        tvYeuthich = (TextView) findViewById(R.id.tvYeuthich);
 
         frag = new FragmentHot();
         transaction = getSupportFragmentManager().beginTransaction();
@@ -57,6 +60,13 @@ public class LibraryActivity extends AppCompatActivity implements FragmentIntera
                 transaction = getSupportFragmentManager().beginTransaction().replace(R.id.frameMain, frag);
                 transaction.commit();
 
+            }
+        });
+        tvYeuthich.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                transaction = getSupportFragmentManager().beginTransaction().replace(R.id.frameMain, new FragmentTypiCode());
+                transaction.commit();
             }
         });
     }
