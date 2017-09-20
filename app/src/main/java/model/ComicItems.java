@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 /**
- * Created by NewPC on 10/09/2017.
+ * Created by NewPC2git sigi on 10/09/2017.
  */
 
 public class ComicItems implements Serializable {
