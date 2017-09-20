@@ -8,7 +8,8 @@ public class Enumes {
     public enum  FragmentType {
         FRAGMENT_DOWNLOAD("FRAGMENT_DOWNLOAD"),
         FRAGMENT_HOT("FRAGMENT_HOT"),
-        FRAGMENT_TYPE("FRAGMENT_TYPE");
+        FRAGMENT_TYPE("FRAGMENT_TYPE"),
+        FRAGMENT_ACTICLE("FRAGMENT_ACTICLE");
 
         final String mValue;
         FragmentType(String value){ mValue = value;}

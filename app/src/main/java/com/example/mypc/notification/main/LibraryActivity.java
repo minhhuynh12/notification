@@ -17,6 +17,7 @@ import com.example.mypc.notification.R;
 
 import extras.Enumes;
 import fragment.BaseFragment;
+import fragment.FragmentActicle;
 import fragment.FragmentDownload;
 import fragment.FragmentHot;
 import fragment.FragmentType;
@@ -85,6 +86,9 @@ public class LibraryActivity extends AppCompatActivity implements FragmentIntera
                 break;
             case FRAGMENT_TYPE:
                 fragment = new FragmentType();
+                break;
+            case FRAGMENT_ACTICLE:
+                fragment = new FragmentActicle();
                 break;
         }
 
