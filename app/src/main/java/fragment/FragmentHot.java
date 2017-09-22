@@ -19,17 +19,24 @@ import extras.Enumes;
  */
 
 public class FragmentHot extends Fragment {
-    Button btnHot;
+    Button btnHot, btnTodo;
     FragmentInteraction mInteraction;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_hot_comic , null );
+        btnTodo = view.findViewById(R.id.btnTodo);
         btnHot = view.findViewById(R.id.btnHot);
         btnHot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mInteraction.openFragmnet(Enumes.FragmentType.FRAGMENT_ACTICLE, null , Enumes.Direction.RIGHT_IN);
+            }
+        });
+        btnTodo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mInteraction.openFragmnet(Enumes.FragmentType.FRAGMENT_TODO, null , Enumes.Direction.RIGHT_IN);
             }
         });
 
