@@ -20,8 +20,10 @@ import fragment.BaseFragment;
 import fragment.FragmentActicle;
 import fragment.FragmentDownload;
 import fragment.FragmentHot;
+import fragment.FragmentTodo;
 import fragment.FragmentType;
 import fragment.FragmentTypiCode;
+import fragment.TodoByIdFragment;
 
 /**
  * Created by MyPC on 11/09/2017.
@@ -89,6 +91,12 @@ public class LibraryActivity extends AppCompatActivity implements FragmentIntera
                 break;
             case FRAGMENT_ACTICLE:
                 fragment = new FragmentActicle();
+                break;
+            case  FRAGMENT_TODO:
+                fragment = new FragmentTodo();
+                break;
+            case FRAGMENT_TODOBYID:
+                fragment = new TodoByIdFragment();
                 break;
         }
 
