@@ -5,9 +5,18 @@ package remote;
  */
 
 public class ApiUtilsForTypiCode {
-    public  static final String BASE_URL_1 = "http://jsonplaceholder.typicode.com/";
+    public static final String BASE_URL_1 = "http://jsonplaceholder.typicode.com/";
+    static ApiService apiService;
 
-    public static ApiService getService(){
-        return RetrofitClient.getClient(BASE_URL_1).create(ApiService.class);
+    public static ApiService getService() {
+        if (apiService == null) {
+            synchronized (ApiService.class) {
+                if (apiService == null) {
+                    apiService = RetrofitClient.getClient(BASE_URL_1).create(ApiService.class);
+                }
+            }
+        }
+
+        return apiService;
     }
 }

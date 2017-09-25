@@ -44,12 +44,7 @@ public class FragmentTodo extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_todo_json, null);
         mRecyclerView = view.findViewById(R.id.recyclerTodo);
-//        ArrayList<TodoItems> itemsArrayList = new ArrayList<>();
-//        itemsArrayList.add(new TodoItems("Minh Huynh" , "minh Huynh" ));
-//        itemsArrayList.add(new TodoItems("Minh Huynh" , "minh Huynh" ));
-//        itemsArrayList.add(new TodoItems("Minh Huynh" , "minh Huynh" ));
-//        itemsArrayList.add(new TodoItems("Minh Huynh" , "minh Huynh" ));
-//        itemsArrayList.add(new TodoItems("Minh Huynh" , "minh Huynh" ));
+
         load();
 
 
@@ -72,7 +67,8 @@ public class FragmentTodo extends BaseFragment {
                     @Override
                     public void onClick(int pos) {
 
-                        response.body().get(pos).id.toString();
+//                        response.body().get(pos).id.valueOf();
+
                         Bundle bundle = new Bundle();
                         bundle.putString("id", response.body().get(pos).id.toString());
                         mInteraction.openFragmnet(Enumes.FragmentType.FRAGMENT_TODOBYID, bundle , Enumes.Direction.RIGHT_IN);
