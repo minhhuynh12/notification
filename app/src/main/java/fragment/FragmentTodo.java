@@ -70,7 +70,7 @@ public class FragmentTodo extends BaseFragment {
 //                        response.body().get(pos).id.valueOf();
 
                         Bundle bundle = new Bundle();
-                        bundle.putString("id", response.body().get(pos).id.toString());
+                        bundle.putString("User_id", response.body().get(pos).userId.toString());
                         mInteraction.openFragmnet(Enumes.FragmentType.FRAGMENT_TODOBYID, bundle , Enumes.Direction.RIGHT_IN);
 
                     }
