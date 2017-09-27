@@ -22,7 +22,7 @@ public interface ApiServiceTodo {
     Call<TodoItems> getListRepsonseTodoById(@Path("id") String id);
 //    @GET("todos")
 //    Call<List<TodoItems>> getListRepsonseTodo(@Query("user_id") String user_id  );
-    @GET("todos")
+    @POST("todos")
     Call<List<TodoItems>> getListRepsonseTodo( );
     @POST("todos")
     Call<List<TodoItems>> getListRepsonseTodoPost(@Field("user_id") String user_id);
